@@ -1,12 +1,13 @@
+import Container from "./Container";
 import Form from "./Form";
 import Result from "./Result";
 
 function App() {
   return (
-    <div className="body__container">
+    <Container>
         <Form />
         <Result />
-    </div>
+    </Container>
   );
 }
 
