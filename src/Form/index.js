@@ -1,12 +1,13 @@
 import "./style.css";
 import { currecies } from "../Currencies";
+import Header from "../Header";
 
 const Form = (props) => (
     <form className="form">
         <fieldset className="form__fieldset">
-            <header className="form__header">
-                Przelicznik walut
-            </header>
+            <Header
+             title="Przelicznik walut"
+            />
             <p className="form__paragraph">
                 <label>
                     <span className="form__labelText">Wpisz kwotę (PLN):</span>
@@ -29,7 +30,7 @@ const Form = (props) => (
                     </select>
                 </label>
             </p>
-            <p className="form__paragraph form__paragraph--button">
+            <p className="form__paragraph">
                 <button className="form__button">Przelicz</button>
             </p>
         </fieldset>
