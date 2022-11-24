@@ -1,6 +1,6 @@
 .result {
     text-align: center;
+    margin: 0;
     color: hsl(180, 100%, 25%);
     font-size: 17px;
-    font-weight: 700;
 }
