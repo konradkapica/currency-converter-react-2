@@ -1,17 +1,22 @@
 import Container from "./Container";
 import Form from "./Form";
-import Result from "./Result";
+import {Result} from "./Result"
 import Header from "./Header";
 import { useState } from "react";
 import { currencies } from "./currencies";
 
 
 function App() {
-  const [result, setResult] = useState(null);
+  const [result, setResult] = useState("");
 
   const calculateResult = (amount, currency) => {
-    const { rate: rateExchange, short: currencyName } = currencies.find(({ short }) => short === currency);
-    setResult((`${amount} PLN = `) + (+amount / rateExchange).toFixed(2) + ` ${currencyName}`);
+    const rateExchange = currencies.find(({ short }) => short === currency).rate;
+
+    setResult({
+      sourceAmount: +amount,
+      targetAmount: +amount / rateExchange,
+      currency,
+    });
   };
 
   return (
