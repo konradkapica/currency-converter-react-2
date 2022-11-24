@@ -1,6 +1,5 @@
 import "./style.css";
 import { currencies } from "../Currencies";
-import Header from "../Header";
 import { useState } from "react";
 
 const Form = ({ calculateResult }) => {
@@ -17,9 +16,6 @@ const Form = ({ calculateResult }) => {
     return (
         <form className="form" onSubmit={onFormSubmit}>
             <fieldset className="form__fieldset">
-                <Header
-                    title="Przelicznik walut"
-                />
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText">Wpisz kwotę (PLN):</span>
@@ -61,7 +57,6 @@ const Form = ({ calculateResult }) => {
                     <button className="form__button">Przelicz</button>
                 </p>
             </fieldset>
-
         </form>
     );
 };
