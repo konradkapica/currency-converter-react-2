@@ -1,6 +1,8 @@
-const Result = ({result}) => (
+import "./style.css"
+
+const Result = ({ result }) => (
     <p className="result">
-       {result}
+        {result}
     </p>
 );
 
