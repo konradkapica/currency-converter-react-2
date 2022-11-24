@@ -1,7 +1,7 @@
-const Result = () => (
+const Result = ({result}) => (
     <p className="result">
-            -
-        </p>
+        {result}
+    </p>
 )
 
 export default Result;

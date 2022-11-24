@@ -1,13 +1,17 @@
 import "./style.css";
-import { currecies } from "../Currencies";
+import { currencies } from "../Currencies";
 import Header from "../Header";
 import { useState } from "react";
 
-const Form = (props) => {
+const Form = ({ calculateResult }) => {
     const [amount, setAmount] = useState("")
+    const [currencyExchange, setCurrencyExchange] = useState("EUR")
+
+    const onSelectChange = ({ target }) => setCurrencyExchange(target.value)
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        calculateResult(amount, currencyExchange);
     };
 
     return (
@@ -29,15 +33,20 @@ const Form = (props) => {
                             autoFocus
                             required
                             value={amount}
-                            onChange={({target}) => setAmount(target.value)}
+                            onChange={({ target }) => setAmount(target.value)}
                         />
                     </label>
                 </p>
                 <p className="form__paragraph">
                     <label>
                         <span className="form__labelText">Wybierz walutę:</span>
-                        <select className="form__field" name="currency">
-                            {currecies.map(currency => (
+                        <select
+                            className="form__field"
+                            name="currency"
+                            value={currencyExchange}
+                            onChange={onSelectChange}
+                        >
+                            {currencies.map(currency => (
                                 <option
                                     key={currency.short}
                                     value={currency.short}

@@ -1,4 +1,4 @@
-export const currecies = [
+export const currencies = [
     {
         name: "Euro",
         short: "EUR",
