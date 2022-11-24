@@ -1,12 +1,12 @@
 import "./style.css";
-import { currencies } from "../Currencies";
+import { currencies } from "../currencies";
 import { useState } from "react";
 
 const Form = ({ calculateResult }) => {
-    const [amount, setAmount] = useState("")
-    const [currencyExchange, setCurrencyExchange] = useState("EUR")
+    const [amount, setAmount] = useState("");
+    const [currencyExchange, setCurrencyExchange] = useState(currencies[0].short);
 
-    const onSelectChange = ({ target }) => setCurrencyExchange(target.value)
+    const onSelectChange = ({ target }) => setCurrencyExchange(target.value);
 
     const onFormSubmit = (event) => {
         event.preventDefault();
