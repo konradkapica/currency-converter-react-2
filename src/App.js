@@ -1,6 +1,6 @@
 import Container from "./Container";
 import Form from "./Form";
-import {Result} from "./Result"
+import { Result } from "./Result"
 import Header from "./Header";
 import { useState } from "react";
 import { currencies } from "./currencies";
