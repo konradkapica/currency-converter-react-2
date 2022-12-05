@@ -1,9 +1,9 @@
 import "./style.css";
-import Date from "./Date";
+import Clock from "./Date";
 
 const Header = ({ title }) => (
     <>
-        <Date />
+        <Clock />
         <h1 className="header">
             {title}
         </h1>

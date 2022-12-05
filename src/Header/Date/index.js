@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import "./style.css";
 
-const Date = () => {
-    const [myDate, setMyDate] = useState(new window.Date());
+const Clock = () => {
+    const [myDate, setMyDate] = useState(new Date());
 
     const formatDate = (date) => date.toLocaleDateString(undefined, {
         weekday: "long",
@@ -15,7 +15,7 @@ const Date = () => {
 
     useEffect(() => {
         const IntervalId = setInterval(() => {
-            setMyDate(myDate => new window.Date())
+            setMyDate(myDate => new Date())
         }, 1000);
 
         return () => {
@@ -30,4 +30,4 @@ const Date = () => {
     );
 };
 
-export default Date;
+export default Clock;
