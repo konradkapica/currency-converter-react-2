@@ -1,6 +1,6 @@
-import "./style.css";
 import { currencies } from "../currencies";
 import { useState } from "react";
+import { StyledForm, Paragraph, LabelText, FormFiled, Button } from "./styled"
 
 const Form = ({ calculateResult }) => {
     const [amount, setAmount] = useState("");
@@ -14,13 +14,10 @@ const Form = ({ calculateResult }) => {
     };
 
     return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <fieldset className="form__fieldset">
-                <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText">Wpisz kwotę (PLN):</span>
-                        <input
-                            className="form__field"
+            <StyledForm onSubmit={onFormSubmit}>
+                <Paragraph>
+                        <LabelText>Wpisz kwotę (PLN):</LabelText>
+                        <FormFiled
                             name="PLN"
                             type="number"
                             min="0.01"
@@ -31,13 +28,11 @@ const Form = ({ calculateResult }) => {
                             value={amount}
                             onChange={({ target }) => setAmount(target.value)}
                         />
-                    </label>
-                </p>
-                <p className="form__paragraph">
-                    <label>
-                        <span className="form__labelText">Wybierz walutę:</span>
-                        <select
-                            className="form__field"
+                </Paragraph>
+                <Paragraph>
+                        <LabelText>Wybierz walutę:</LabelText>
+                        <FormFiled
+                            as="select"
                             name="currency"
                             value={currencyExchange}
                             onChange={onSelectChange}
@@ -50,16 +45,13 @@ const Form = ({ calculateResult }) => {
                                     {currency.name}
                                 </option>
                             ))};
-                        </select>
-                    </label>
-                </p>
-                <p className="form__paragraph">
-                    <button className="form__button">Przelicz</button>
-                </p>
-            </fieldset>
-        </form>
+                        </FormFiled>
+                </Paragraph>
+                <Paragraph>
+                    <Button>Przelicz</Button>
+                </Paragraph>
+            </StyledForm>
     );
 };
-
 
 export default Form;
