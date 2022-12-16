@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.886bd149.css","mappings":"AAAA,QAEI,UAA0B,CAC1B,cAAe,CAFf,iBAGJ","sources":["Header/style.css"],"sourcesContent":[".header {\n    text-align: center;\n    color: hsl(180, 100%, 25%);\n    font-size: 25px;\n}"],"names":[],"sourceRoot":""}
