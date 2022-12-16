@@ -1,13 +1,13 @@
 import { useCurrentDate } from "./useCurrentDate";
-import "./style.css";
+import { StyledClock } from "./styled"
 
 const Clock = () => {
     const [myDate, formatDate] = useCurrentDate();
 
     return (
-        <p className="date">
+        <StyledClock>
             Dzisiaj jest {formatDate(myDate)}
-        </p>
+        </StyledClock>
     );
 };
 
