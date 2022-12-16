@@ -1,4 +1,6 @@
-.container {
+import styled from "styled-components";
+
+export const StyledContainer = styled.main`
     max-width: 500px;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -8,10 +10,8 @@
     box-shadow: 0px 0px 86px -33px #606060;
     display: grid;
     grid-gap: 10px;
-}
 
-@media (max-width: 531px) {
-    .container {
+    @media (max-width: 531px) {
         margin: 50px 15px auto 15px;
     }
-}
+`;
