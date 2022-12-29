@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { StyledForm, Paragraph, LabelText, FormFiled, Button, ErrorText, LoadingText, Spinner, Info } from "./styled"
+import { StyledForm, Paragraph, LabelText, FormFiled, Button, ErrorText, Loading, LoadingText, Spinner, Info } from "./styled"
 import { Result } from "./Result"
 import { useRatesData } from "./useRatesData";
 
@@ -39,11 +39,14 @@ const Form = () => {
                 </ErrorText>
             ) : status !== "success" ? (
                 <>
-                    <LoadingText>
+                <LoadingText>
                         Trwa ładowanie danych z Europejskiego Banku Centralnego...
                     </LoadingText>
+                <Loading>
                     <Spinner></Spinner>
+                </Loading>
                 </>
+                    
             ) : (
                 <>
                     <Paragraph>

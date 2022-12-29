@@ -77,19 +77,25 @@ export const Button = styled.button`
 `;
 
 export const LoadingText = styled.p`
-    font-size: 20px;
+    font-size: 18px;
     line-height: 2.0;
-    margin-top: 30px;
+    margin: 0;
+    text-align: center;
 `;
 
 export const ErrorText = styled(LoadingText)`
     color: red;
 `;
 
-export const Spinner = styled.span`
+export const Loading = styled.div`
+    display: flex;
+    justify-content: center;
+`;
+
+export const Spinner = styled.p`
     width: 48px;
     height: 48px;
-    border: 5px solid #FFF;
+    border: 5px solid teal;
     border-bottom-color: transparent;
     border-radius: 50%;
     display: inline-block;
