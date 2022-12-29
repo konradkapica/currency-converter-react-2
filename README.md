@@ -13,6 +13,8 @@ Simple currency converter. This application allows you to convert amounts in 4 s
 - CSS
 - JavaScript
 - React
+- Styled-components
+- Custom-hooks
 - BEM
 - ES6+
 - GIT
