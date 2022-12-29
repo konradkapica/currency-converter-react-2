@@ -3,7 +3,6 @@ import { StyledForm, Paragraph, LabelText, FormFiled, Button, ErrorText, Loading
 import { Result } from "./Result"
 import { useRatesData } from "./useRatesData";
 
-
 const Form = () => {
     const [amount, setAmount] = useState("");
     const [currencyExchange, setCurrencyExchange] = useState("EUR");
@@ -30,70 +29,69 @@ const Form = () => {
 
     return (
         <>
-        <StyledForm onSubmit={onFormSubmit}>
-            {status === "error" ? (
-                <ErrorText>
-                    Ups... coś poszło nie tak!
-                    <br />
-                    Możesz nie mieć połączenia z internetem. Odśwież stronę lub spróbuj później.
-                </ErrorText>
-            ) : status !== "success" ? (
-                <>
-                <LoadingText>
-                        Trwa ładowanie danych z Europejskiego Banku Centralnego...
-                    </LoadingText>
-                <Loading>
-                    <Spinner></Spinner>
-                </Loading>
-                </>
-                    
-            ) : (
-                <>
-                    <Paragraph>
-                        <LabelText>Wpisz kwotę (PLN):</LabelText>
-                        <FormFiled
-                            name="PLN"
-                            type="number"
-                            min="0.01"
-                            step="any"
-                            placeholder="PLN"
-                            autoFocus
-                            required
-                            value={amount}
-                            onChange={({ target }) => setAmount(target.value)}
-                        />
-                    </Paragraph>
-                    <Paragraph>
-                        <LabelText>Wybierz walutę:</LabelText>
-                        <FormFiled
-                            as="select"
-                            name="currency"
-                            value={currencyExchange}
-                            onChange={onSelectChange}
-                        >
-                            {Object.keys(rates).map(currency => (
-                                <option
-                                    key={currency}
-                                    value={currency}
-                                >
-                                    {currency}
-                                </option>
-                            ))};
-                        </FormFiled>
-                    </Paragraph>
-                    <Button>Przelicz</Button>
-                </>
-            )}
-        </StyledForm>
-        <Result
-        result={result}
-    />
-    <Info>
-        Kursy walut pobierane są z Europejskiego Banku Centralnego.
-        <br />
-        Aktualne na dzień: <strong>{date}</strong>
-    </Info>
-    </>
+            <StyledForm onSubmit={onFormSubmit}>
+                {status === "error" ? (
+                    <ErrorText>
+                        Ups... coś poszło nie tak!
+                        <br />
+                        Możesz nie mieć połączenia z internetem. Odśwież stronę lub spróbuj później.
+                    </ErrorText>
+                ) : status !== "success" ? (
+                    <>
+                        <LoadingText>
+                            Trwa ładowanie danych z Europejskiego Banku Centralnego...
+                        </LoadingText>
+                        <Loading>
+                            <Spinner></Spinner>
+                        </Loading>
+                    </>
+                ) : (
+                    <>
+                        <Paragraph>
+                            <LabelText>Wpisz kwotę (PLN):</LabelText>
+                            <FormFiled
+                                name="PLN"
+                                type="number"
+                                min="0.01"
+                                step="any"
+                                placeholder="PLN"
+                                autoFocus
+                                required
+                                value={amount}
+                                onChange={({ target }) => setAmount(target.value)}
+                            />
+                        </Paragraph>
+                        <Paragraph>
+                            <LabelText>Wybierz walutę:</LabelText>
+                            <FormFiled
+                                as="select"
+                                name="currency"
+                                value={currencyExchange}
+                                onChange={onSelectChange}
+                            >
+                                {Object.keys(rates).map(currency => (
+                                    <option
+                                        key={currency}
+                                        value={currency}
+                                    >
+                                        {currency}
+                                    </option>
+                                ))};
+                            </FormFiled>
+                        </Paragraph>
+                        <Button>Przelicz</Button>
+                    </>
+                )}
+            </StyledForm>
+            <Result
+                result={result}
+            />
+            <Info>
+                Kursy walut pobierane są z Europejskiego Banku Centralnego.
+                <br />
+                Aktualne na dzień: <strong>{date}</strong>
+            </Info>
+        </>
     );
 };
 

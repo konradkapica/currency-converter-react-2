@@ -8,7 +8,6 @@ const Header = ({ title }) => (
             {title}
         </StyledHeader>
     </header>
-
 );
 
 export default Header;
