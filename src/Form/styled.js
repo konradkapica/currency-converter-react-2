@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const StyledForm = styled.form`
     display: grid;
-    grid-gap: 20px;
-    border: none;
+    grid-gap: 30px;
 
     @media (max-width: 491px) {
             display: flex;
@@ -13,7 +12,11 @@ export const StyledForm = styled.form`
 `;
 
 export const Paragraph = styled.p`
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     margin: 0;
+    flex-wrap: wrap;
 
     @media (max-width: 491px) {
             margin: 0;
@@ -25,7 +28,10 @@ export const LabelText = styled.span`
     width: 100%;
     max-width: 175px;
     display: inline-block;
-    margin-bottom: 10px;
+
+    @media (max-width: 491px) {
+            margin-bottom: 10px;
+        }
 `;
 
 export const FormFiled = styled.input`
@@ -50,7 +56,10 @@ export const Button = styled.button`
     color: white;
     padding: 10px;
     border-radius: 5px;
-    margin-left: 40px;
+    display: block;
+    width: 100%;
+    transition: 0.3s;
+    margin-left: 0;
 
     @media (max-width: 491px) {
             margin-top: 10px;
@@ -65,4 +74,40 @@ export const Button = styled.button`
     &:active {
         background-color: hsl(180, 100%, 35%);
     }
+`;
+
+export const LoadingText = styled.p`
+    font-size: 20px;
+    line-height: 2.0;
+    margin-top: 30px;
+`;
+
+export const ErrorText = styled(LoadingText)`
+    color: red;
+`;
+
+export const Spinner = styled.span`
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+
+    @keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+    }
+`;
+
+export const Info = styled.p`
+    text-align: center;
+    color: grey;
+    font-size: 14px;
 `;
