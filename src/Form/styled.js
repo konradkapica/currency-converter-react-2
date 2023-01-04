@@ -116,4 +116,5 @@ export const Info = styled.p`
     text-align: center;
     color: grey;
     font-size: 14px;
+    margin: 0;
 `;
