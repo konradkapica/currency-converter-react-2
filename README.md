@@ -5,7 +5,7 @@
 
 ## Description
 
-Simple currency converter. This application allows you to convert amounts in 4 seleted currencies. Enter your amount in PLN and select the currency in which you want to get new amount.
+Simple currency converter. This application allows you to convert amounts in 4 selected currencies. Enter your amount in PLN and select the currency in which you want to get new amount.
 
 ## Technologies
 
