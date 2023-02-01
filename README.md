@@ -1,11 +1,13 @@
 # Currency-Converter-React
+
+![image](./public/screenshot.png)
 ## Demo
 
 [Currency-converter demo](https://rudolfini.github.io/currency-converter-react-2/)
 
 ## Description
 
-Simple currency converter. This application allows you to convert amounts in 4 selected currencies. Enter your amount in PLN and select the currency in which you want to get new amount.
+Simple currency converter created in React. Application is using API to fetch currencies. Enter your amount in PLN and select the currency in which you want to get new amount.
 
 ## Technologies
 
