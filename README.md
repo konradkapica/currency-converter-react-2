@@ -3,7 +3,7 @@
 ![image](./public/screenshot.png)
 ## Demo
 
-[Currency-converter demo](https://rudolfini.github.io/currency-converter-react-2/)
+[Currency-converter demo](https://konradkapica.github.io/currency-converter-react-2/)
 
 ## Description
 
